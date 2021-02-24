@@ -5221,7 +5221,7 @@ namespace std {
       requires @\exposconcept{dereferenceable}@<const I>;
 
     constexpr auto operator->() const noexcept
-      requires contiguous_iterator<I>;
+      requires @\libconcept{contiguous_iterator}@<I>;
 
     constexpr counted_iterator& operator++();
     decltype(auto) operator++(int);
@@ -5280,7 +5280,7 @@ namespace std {
   template<@\libconcept{input_iterator}@ I>
     requires @\libconcept{same_as}@<@\exposid{ITER_TRAITS}@(I), iterator_traits<I>>   // see \ref{iterator.concepts.general}
   struct iterator_traits<counted_iterator<I>> : iterator_traits<I> {
-    using pointer = conditional_t<contiguous_iterator<I>,
+    using pointer = conditional_t<@\libconcept{contiguous_iterator}@<I>,
                                   add_pointer_t<iter_reference_t<I>>, void>;
   };
 }
@@ -5393,7 +5393,7 @@ Equivalent to: \tcode{return *current;}
 \indexlibrarymember{operator->}{counted_iterator}%
 \begin{itemdecl}
 constexpr auto operator->() const noexcept
-  requires contiguous_iterator<I>;
+  requires @\libconcept{contiguous_iterator}@<I>;
 \end{itemdecl}
 
 \begin{itemdescr}

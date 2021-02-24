@@ -3851,7 +3851,7 @@ namespace std::ranges {
 
 \pnum
 The member \grammarterm{typedef-name} \tcode{iterator_category} is defined
-if and only if \tcode{Base} models \tcode{forward_range}.
+if and only if \exposid{Base} models \tcode{forward_range}.
 In that case,
 \tcode{iterator::iterator_category} is defined as follows:
 Let \tcode{C} denote the type
@@ -5138,8 +5138,8 @@ namespace std::ranges {
 \pnum
 The member \grammarterm{typedef-name} \tcode{iterator_category} is defined
 if and only if \exposid{ref-is-glvalue} is \tcode{true},
-\tcode{Base} models \libconcept{forward_range}, and
-\tcode{range_reference_t<Base>} models \libconcept{forward_range}.
+\exposid{Base} models \libconcept{forward_range}, and
+\tcode{range_reference_t<\exposid{Base}>} models \libconcept{forward_range}.
 In that case,
 \tcode{iterator::iter\-ator_category} is defined as follows:
 \begin{itemize}
@@ -6472,10 +6472,10 @@ Let \tcode{C} denote the type
 \tcode{iterator_traits<iterator_t<\exposid{Base}>>::iterator_category}.
 \begin{itemize}
 \item
-If \tcode{get<N>(*current_)} is an rvalue,
+If \tcode{get<N>(*\exposid{current_})} is an rvalue,
 \tcode{iterator_category} denotes \tcode{input_iterator_tag}.
 \item
-Otherwise, if \tcode{C} models \tcode{derived_from<random_access_iterator_tag>},
+Otherwise, if \tcode{C} models \tcode{\libconcept{derived_from}<random_access_iterator_tag>},
 \tcode{iterator_category} denotes \tcode{random_access_iterator_tag}.
 \item
 Otherwise, \tcode{iterator_category} denotes \tcode{C}.

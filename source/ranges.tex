@@ -5223,7 +5223,7 @@ Initializes \exposid{outer_} with \tcode{std::move(i.\exposid{outer_})},
 \indexlibrarymember{operator->}{join_view::iterator}%
 \begin{itemdecl}
 constexpr @\exposid{InnerIter}@ operator->() const
-  requires @\exposconcept{has-arrow}@<@\exposid{InnerIter}@> && copyable<@\exposid{InnerIter}@>;
+  requires @\exposconcept{has-arrow}@<@\exposid{InnerIter}@> && @\libconcept{copyable}@<@\exposid{InnerIter}@>;
 \end{itemdecl}
 
 \begin{itemdescr}

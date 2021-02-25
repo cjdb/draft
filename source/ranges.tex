@@ -6383,7 +6383,7 @@ namespace std::ranges {
   class elements_view<V, N>::@\exposid{iterator}@ {                 // \expos
     using @\exposid{Base}@ = @\exposid{maybe-const}@<Const, V>;                 // \expos
 
-    iterator_t<@\exposid{Base}@> @\exposid{current_}@ = iterator_t<@\exposid{Base}@>();    // \expos
+    iterator_t<@\exposid{Base}@> @\exposid{current_}@ = iterator_t<@\exposid{Base}@>();     // \expos
 
     static constexpr decltype(auto) @\exposid{get-element}@(const iterator_t<@\exposid{Base}@>& i);     // \expos
 
